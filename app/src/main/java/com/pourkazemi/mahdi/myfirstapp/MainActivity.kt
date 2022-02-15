@@ -3,13 +3,15 @@ package com.pourkazemi.mahdi.myfirstapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.pourkazemi.mahdi.myfirstapp.databinding.ActivityMainBinding
 
 const val TAG = "MainActivity"
-
+private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Log.d(TAG,"onCreateCalled")
     }
 
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        binding.textview.text="goodbye"
+
         Log.d(TAG,"onStop Called")
     }
 
