@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        binding.textview.text="goodbye"
+        //binding.textview.text="goodbye"
 
         Log.d(TAG,"onStop Called")
     }
